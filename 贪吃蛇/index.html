@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贪吃蛇</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 600px;
+			height: 600px;
+			margin: 10px auto;
+			border: 1px solid #ccc;
+		}
+		.row{
+			overflow: hidden;
+		}
+		.col{
+			float: left;
+			border: 1px solid #ccc;
+			box-sizing:border-box;
+		}
+		#jiesuan{
+			position: absolute;
+			width: 800px;
+			height: 400px;
+			top: 110px;
+			left: 50%;
+			margin-left: -400px;
+			background-image: -webkit-linear-gradient(top,pink,white);
+			color: darkorange;
+			opacity: 0;
+		}
+		 #jiesuan h3{
+			font-size: 110px;
+			line-height: 300px;
+			text-align: center;
+		} 
+		#jiesuan p{
+			text-align: right;
+			padding-right: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<div id="jiesuan">
+		<h3>GAME&nbsp;&nbsp;OVER!</h3>
+		<p>最终得分是：<span id="score"></span>分！</p>
+		<p>存活时间：<span id="fen">50</span>分<span id="miao">5</span>秒</p>
+	</div>
+	<script type="text/javascript" src="js/animate.js"></script>
+	<script type="text/javascript" src="js/Game.js"></script>
+	<script type="text/javascript" src="js/Snake.js"></script>
+	<script type="text/javascript" src="js/Food.js"></script>
+	<script type="text/javascript" src="js/Z.js"></script>
+	<script type="text/javascript">
+		var $ = function(id){
+			return document.getElementById(id);
+		}
+		var box = $("box");
+		var jiesuan = $("jiesuan");
+		var score = $("score");
+		var fen = $("fen");
+		var miao = $("miao");
+		var g = new Game(box,20,20,Snake,Food,Z);
+	</script>
+</body>
+</html>
